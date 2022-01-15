@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <title>Registration</title>
+</head>
+<h1 class="text-uppercase text-center mb-5">Register</h1>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center">
+            <form action="register" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleInputfirstname">First name</label>
+                  <input name="first_name" type="text" class="form-control d-flex justify-content-center" id="exampleInputfirstname" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputlastname">Last name</label>
+                  <input name="last_name" type="text" class="form-control d-flex justify-content-center" id="exampleInputlastname" placeholder="last Name">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputUsername">Username</label>
+                  <input name="username" type="text" class="form-control d-flex justify-content-center" id="exampleInputUsername" placeholder="Username">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input name="email" type="email" class="form-control d-flex justify-content-center" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+            
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input name="password1" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Confirm Password</label>
+                  <input name="password2" type="password" class="form-control" id="exampleInputpassword2" placeholder="Password">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+
+              <div>
+                {% for message in messages %}
+                {{messages}}
+                {% endfor %}
+              </div>
+        </div>
+    </div>
+</body>
+</html>
